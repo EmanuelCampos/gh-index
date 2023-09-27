@@ -28,7 +28,6 @@ pip install -r requirements.txt
 Install the tool in editable mode:
 
 ```bash
-
 pip install -e .
 ```
 
@@ -64,8 +63,24 @@ Once the configuration is set, you can use other commands like query commands th
 
 To query specifics pieces of your data, you can run: 
 ```bash
-gpt-index query "Tell me about the folder structure"
-``````
+gpt-index query "List for me all fastapi routes and paramters on conversations.py file"
+```
+
+output:
+```bash
+Using the following configuration:
+{'directories_to_include': ['backend', 'frontend'], 'file_extensions_to_include': ['.py'], 'github_branch': 'main', 'repository_name': 'sec-insights', 'repository_owner': 'run-llama'}
+Running the query: List for me all fastapi routes and paramters on conversations.py file ...
+There are four FastAPI routes in the `conversation.py` file:
+
+1. POST `/`: This route is used to create a new conversation. It expects a payload of type `schema.ConversationCreate` and returns a response of type `schema.Conversation`.
+
+2. GET `/{conversation_id}`: This route is used to get a conversation by its ID along with its messages and message subprocesses. It expects a path parameter `conversation_id` of type `UUID` and returns a response of type `schema.Conversation`.
+
+3. DELETE `/{conversation_id}`: This route is used to delete a conversation by its ID. It expects a path parameter `conversation_id` of type `UUID` and does not return any response.
+
+4. GET `/{conversation_id}/message`: This route is used to send a message from a user to a conversation and receive a SSE (Server-Sent Events) stream of the assistant's response. It expects path parameter `conversation_id` of type `UUID` and query parameter `user_message` of type `str`. It returns a response of type `EventSourceResponse`.
+```
 
 ## Contributon
 - Adding soon
