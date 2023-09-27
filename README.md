@@ -47,8 +47,9 @@ To update the configuration:
 
 ```bash
 gh-index update-config --repository-owner [OWNER] --repository-name [NAME] --directories-to-include [DIR1] --directories-to-include [DIR2] --file-extensions-to-include [.EXT1] --file-extensions-to-include [.EXT2] --github-branch [BRANCH_NAME]
-Replace [OWNER], [NAME], [DIR1], [DIR2], [.EXT1], [.EXT2], and [BRANCH_NAME] with your desired values.
 ```
+
+Replace [OWNER], [NAME], [DIR1], [DIR2], [.EXT1], [.EXT2], and [BRANCH_NAME] with your desired values.
 
 For example:
 
