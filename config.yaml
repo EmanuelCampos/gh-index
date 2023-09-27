@@ -1,0 +1,8 @@
+directories_to_include:
+- backend
+- frontend
+file_extensions_to_include:
+- .py
+github_branch: main
+repository_name: sec-insights
+repository_owner: run-llama
